@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mkdir -p jquery/static/js
+
+for x in $@ ; do
+	curl http://code.jquery.com/jquery-$x.min.js > jquery/static/js/jquery.min.js
+	curl http://code.jquery.com/jquery-$x.js > jquery/static/js/jquery.js
+	echo "__version__ = '$x'" > jquery/__init__.py
+	git add jquery/static/js/jquery.js
+	git add jquery/static/js/jquery.min.js
+	git add jquery/__init__.py
+	git commit -m "Bump version to v$x"
+	git tag "v$x"
+	./setup.py sdist
+done
