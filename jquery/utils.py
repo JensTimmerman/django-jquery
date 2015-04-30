@@ -1,4 +1,4 @@
-from jquery import __version__
+from . import __version__
 from django.conf import settings
 from django.forms import Media
 

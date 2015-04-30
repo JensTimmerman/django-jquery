@@ -2,7 +2,7 @@ from django.conf import settings
 from django.forms.utils import flatatt
 from django.template import Library
 
-from jquery.utils import jquery_path
+from ..utils import jquery_path
 
 register = Library()
 
