@@ -11,5 +11,5 @@ register = Library()
 def jquery_script():
     return '<script{0}></script>'.format(flatatt({
         'type': 'text/javascript',
-        'src': settings.MEDIA_URL + jquery_path,
+        'src': settings.STATIC_URL + jquery_path,
     }))
